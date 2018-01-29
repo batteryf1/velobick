@@ -161,7 +161,8 @@ var cart = {
 
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
-						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+						//$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                        $('#cart > button').html('<span class="header-user-icon"><span class="icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_cart"></use></svg></span></span><span class="header-user-text">Корзина</span><span class="add-count add-count_cart header-user-count" data-value=" ' + json['total'] + '"></span>');
 					}, 100);
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
@@ -189,7 +190,8 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					//$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                    $('#cart > button').html('<span class="header-user-icon"><span class="icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_cart"></use></svg></span></span><span class="header-user-text">Корзина</span><span class="add-count add-count_cart header-user-count" data-value=" ' + json['total'] + '"></span>');
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -218,7 +220,8 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					//$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                    $('#cart > button').html('<span class="header-user-icon"><span class="icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_cart"></use></svg></span></span><span class="header-user-text">Корзина</span><span class="add-count add-count_cart header-user-count" data-value=" ' + json['total'] + '"></span>');
 				}, 100);
 				
 				var now_location = String(document.location.pathname);

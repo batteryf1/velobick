@@ -32,6 +32,18 @@
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="catalog/view/theme/default/stylesheet/bootstrap.css">
+  <link rel="stylesheet" href="catalog/view/theme/default/stylesheet/normal.css">
+  <link rel="stylesheet" href="catalog/view/theme/default/stylesheet/general.css">
+  <link rel="stylesheet" href="catalog/view/theme/default/stylesheet/styles.css?v=5">
+  <link rel="stylesheet" href="catalog/view/theme/default/stylesheet/common.css">
+
+
+
+
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
@@ -47,34 +59,83 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-<nav id="top">
+<!-- header top -->
+<div class="header-top hidden-sm hidden-xs">
   <div class="container">
-    <?php echo $currency; ?>
-    <?php echo $language; ?>
-    <div id="top-links" class="nav pull-right">
-      <ul class="list-inline">
-        <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
-        <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <span class="caret"></span></a>
-          <ul class="dropdown-menu dropdown-menu-right">
-            <?php if ($logged) { ?>
-            <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-            <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-            <li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
-            <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
-            <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
-            <?php } else { ?>
-            <li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
-            <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
-            <?php } ?>
+    <div class="row">
+
+      <div class="col-md-6">
+        <?php echo $language; ?>
+        <nav class="header-nav header-devider">
+          <menu class="header-nav_items">
+            <li class="header-nav_item">
+              <a href="#" class="header-nav_link">О магазине</a></li>
+            <li class="header-nav_item">
+              <a href="#" class="header-nav_link">Доставка и оплата</a></li>
+            <li class="header-nav_item">
+              <a href="#" class="header-nav_link">Новости</a></li>
+            <li class="header-nav_item">
+              <a href="#" class="header-nav_link">Контакты</a></li>
+          </menu>
+        </nav>
+      </div>
+
+      <div class="col-md-6">
+
+        <div class="header-user">
+          <ul class="header-user_items header-devider">
+            <li class="header-user_item">
+              <a href="#" class="header-user_link">
+										<span class="header-user-icon">
+											<span class="icon">
+												<svg>
+													<use xlink:href="#icon_prcode"></use>
+												</svg>
+											</span>
+										</span>
+                <span class="header-user-text">Введите промокод</span>
+              </a>
+            </li>
           </ul>
-        </li>
-        <li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></li>
-        <li><a href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_shopping_cart; ?></span></a></li>
-        <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_checkout; ?></span></a></li>
-      </ul>
+
+          <ul class="header-user_items">
+            <li class="header-user_item">
+              <a href=<?php echo $wishlist; ?> class="header-user_link">
+										<span class="header-user-icon">
+											<span class="icon">
+												<svg>
+													<use xlink:href="#icon_favourite"></use>
+												</svg>
+											</span>
+										</span>
+                <span class="add-count add-count_favourite header-user-count" data-value="<?php echo $text_wishlist; ?>"></span>
+              </a>
+            </li>
+            <li class="header-user_item">
+              <a href="<?php echo $compare; ?>" class="header-user_link">
+										<span class="header-user-icon">
+											<span class="icon">
+												<svg>
+													<use xlink:href="#icon_compare"></use>
+												</svg>
+											</span>
+										</span>
+                <span class="add-count add-count_compare header-user-count" data-value="<?php echo $text_compare; ?>"></span>
+              </a>
+            </li>
+            <li class="header-user_item"><?php echo $cart; ?></li>
+          </ul>
+
+        </div>
+      </div>
     </div>
   </div>
-</nav>
+</div>
+<!-- header bottom -->
+
+
+
+
 <header>
   <div class="container">
     <div class="row">
@@ -93,7 +154,6 @@
       </div>
       <div class="col-sm-5"><?php echo $search; ?>
       </div>
-      <div class="col-sm-3"><?php echo $cart; ?></div>
     </div>
   </div>
 </header>
