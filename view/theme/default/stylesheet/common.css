@@ -21,10 +21,6 @@
     text-shadow: none;
 }
 
-#cart .add-count:before {
-    width: 17px;
-}
-
 #cart.open > .btn {
     background-image: none;
     background-color: transparent;
@@ -94,4 +90,8 @@
 
 #form-language .btn-link:hover .fa-caret-down:before {
     border-color: #0ebb26 transparent transparent transparent;
+}
+
+.header-search-wrap .input-group{
+    width: 100%;
 }

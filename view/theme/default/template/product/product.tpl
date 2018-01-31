@@ -454,7 +454,7 @@ $('#button-cart').on('click', function() {
 			if (json['success']) {
 				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+				$('#cart > button').html('<span class="header-user-icon"><span class="icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_cart"></use></svg></span></span><span class="header-user-text">Корзина</span><span class="add-count add-count_cart header-user-count" data-value=" ' + json['total'] + '"></span>');
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 

@@ -93,7 +93,7 @@
 												</svg>
 											</span>
 										</span>
-                <span class="header-user-text">Введите промокод</span>
+                <span class="header-user-text"><?php echo $text_promocode; ?></span>
               </a>
             </li>
           </ul>
@@ -159,29 +159,20 @@
                 <a href="#" class="header-popular_link link">шлем</a></li>
             </menu>
           </div>
-          <form id="form-search" action="" method="" class="header-search">
-            <input id="search" type="text" name="search" class="input input_search" placeholder="Быстрый поиск товара">
-            <button type="submit" class="btn-search">
-									<span class="icon">
-										<svg>
-											<use xlink:href="#icon_search"></use>
-										</svg>
-									</span>
-            </button>
-          </form>
+            <?php echo $search; ?>
         </div>
       </div>
 
       <div class="col-lg-5 col-md-3">
         <div class="header-phone">
           <div class="phone-wrap">
-            <a href="tel:<?php echo $telephone; ?>" class="phone-call"><?php echo $telephone; ?></a>
+            <a href="tel:<?php echo $telephone2; ?>" class="phone-call"><?php echo $telephone; ?></a>
             <span class="icon">
-									<svg>
-										<use xlink:href="#icon_sellphone"></use>
-									</svg>
-								</span>
-            <time class="phone-time">с 9:00 до 18:00 без выходных</time>
+              <svg>
+                <use xlink:href="#icon_sellphone"></use>
+              </svg>
+            </span>
+            <time class="phone-time"><?php echo $open; ?></time>
           </div>
 
           <a href="#" class="btn btn_cta header-cta visible-lg">

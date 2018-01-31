@@ -70,8 +70,17 @@ class ControllerCommonHeader extends Controller {
         //admin telephone
 
         $data['telephone'] = $this->config->get('config_telephone');
+        $data['telephone2'] = $this->config->get('config_telephone2');
 
+        //Время работы
 
+        $data['open'] = nl2br($this->config->get('config_open'));
+
+        //Промокод
+
+        $data['text_promocode'] = $this->language->get('promotional_code_head');
+
+        //
 
 		$data['text_shopping_cart'] = $this->language->get('text_shopping_cart');
 		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', true), $this->customer->getFirstName(), $this->url->link('account/logout', '', true));
