@@ -293,6 +293,9 @@ var wishlist = {
 				}
 
 				$('#wishlist-total span').html(json['total']);
+
+				$('#wishlist_header').html('<span class="header-user-icon"><span class="icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_favourite"></use></svg></span></span><span class="add-count add-count_favourite header-user-count" data-value="' + json['total'] + '"></span>');
+
 				$('#wishlist-total').attr('title', json['total']);
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
@@ -321,6 +324,8 @@ var compare = {
 					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
 					$('#compare-total').html(json['total']);
+
+                    $('.ajax_compare').html('<span class="header-user-icon"><span class="icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_compare"></use></svg></span></span><span class="add-count add-count_compare header-user-count" data-value="' + json['total'] + '"></span>');
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
 				}

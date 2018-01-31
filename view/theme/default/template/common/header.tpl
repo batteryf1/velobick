@@ -100,19 +100,19 @@
 
           <ul class="header-user_items">
             <li class="header-user_item">
-              <a href=<?php echo $wishlist; ?> class="header-user_link">
-										<span class="header-user-icon">
-											<span class="icon">
-												<svg>
-													<use xlink:href="#icon_favourite"></use>
-												</svg>
-											</span>
-										</span>
+              <a id="wishlist_header" href="<?php echo $wishlist; ?>" class="header-user_link">
+				<span class="header-user-icon">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="#icon_favourite"></use>
+                    </svg>
+                  </span>
+				</span>
                 <span class="add-count add-count_favourite header-user-count" data-value="<?php echo $text_wishlist; ?>"></span>
               </a>
             </li>
             <li class="header-user_item">
-              <a href="<?php echo $compare; ?>" class="header-user_link">
+              <a href="<?php echo $compare; ?>" class="header-user_link ajax_compare">
 										<span class="header-user-icon">
 											<span class="icon">
 												<svg>
@@ -132,8 +132,75 @@
   </div>
 </div>
 <!-- header bottom -->
+<div class="header-bottom">
+  <div class="container">
+    <div class="row">
 
+      <div class="col-lg-3 col-md-4">
+        <a href="/" class="header-logo">
+          <picture>
+            <img src="<?php echo $logo; ?>" alt="ВЕЛОСКЛАД Интернет-магазин велосипедов">
+          </picture>
+        </a>
+      </div>
 
+      <div class="col-lg-4 col-md-5">
+        <div class="header-search-wrap">
+          <div class="header-popular">
+            Популярное:
+            <menu class="header-popular_list">
+              <li class="header-popular_item">
+                <a href="#" class="header-popular_link link">велосипед</a></li>
+              <li class="header-popular_item">
+                <a href="#" class="header-popular_link link">горные</a></li>
+              <li class="header-popular_item">
+                <a href="#" class="header-popular_link link">велозапчасти</a></li>
+              <li class="header-popular_item">
+                <a href="#" class="header-popular_link link">шлем</a></li>
+            </menu>
+          </div>
+          <form id="form-search" action="" method="" class="header-search">
+            <input id="search" type="text" name="search" class="input input_search" placeholder="Быстрый поиск товара">
+            <button type="submit" class="btn-search">
+									<span class="icon">
+										<svg>
+											<use xlink:href="#icon_search"></use>
+										</svg>
+									</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-md-3">
+        <div class="header-phone">
+          <div class="phone-wrap">
+            <a href="tel:<?php echo $telephone; ?>" class="phone-call"><?php echo $telephone; ?></a>
+            <span class="icon">
+									<svg>
+										<use xlink:href="#icon_sellphone"></use>
+									</svg>
+								</span>
+            <time class="phone-time">с 9:00 до 18:00 без выходных</time>
+          </div>
+
+          <a href="#" class="btn btn_cta header-cta visible-lg">
+								<span class="btn-icon">
+									<span class="icon">
+										<svg>
+											<use xlink:href="#icon_phone"></use>
+										</svg>
+									</span>
+								</span>
+            <span class="btn-text">Заказать звонок</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- header menu -->
 
 
 <header>
