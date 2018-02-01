@@ -59,33 +59,31 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-<!-- header top -->
-<div class="header-top hidden-sm hidden-xs">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-6">
-        <?php echo $language; ?>
-        <nav class="header-nav header-devider">
-          <menu class="header-nav_items">
-            <li class="header-nav_item">
-              <a href="#" class="header-nav_link">О магазине</a></li>
-            <li class="header-nav_item">
-              <a href="#" class="header-nav_link">Доставка и оплата</a></li>
-            <li class="header-nav_item">
-              <a href="#" class="header-nav_link">Новости</a></li>
-            <li class="header-nav_item">
-              <a href="#" class="header-nav_link">Контакты</a></li>
-          </menu>
-        </nav>
-      </div>
-
-      <div class="col-md-6">
-
-        <div class="header-user">
-          <ul class="header-user_items header-devider">
-            <li class="header-user_item">
-              <a href="#" class="header-user_link">
+<header>
+  <!-- header top -->
+  <div class="header-top hidden-sm hidden-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <?php echo $language; ?>
+          <nav class="header-nav header-devider">
+            <menu class="header-nav_items">
+              <li class="header-nav_item">
+                <a href="#" class="header-nav_link">О магазине</a></li>
+              <li class="header-nav_item">
+                <a href="#" class="header-nav_link">Доставка и оплата</a></li>
+              <li class="header-nav_item">
+                <a href="#" class="header-nav_link">Новости</a></li>
+              <li class="header-nav_item">
+                <a href="#" class="header-nav_link">Контакты</a></li>
+            </menu>
+          </nav>
+        </div>
+        <div class="col-md-6">
+          <div class="header-user">
+            <ul class="header-user_items header-devider">
+              <li class="header-user_item">
+                <a href="#" class="header-user_link">
 										<span class="header-user-icon">
 											<span class="icon">
 												<svg>
@@ -93,14 +91,13 @@
 												</svg>
 											</span>
 										</span>
-                <span class="header-user-text"><?php echo $text_promocode; ?></span>
-              </a>
-            </li>
-          </ul>
-
-          <ul class="header-user_items">
-            <li class="header-user_item">
-              <a id="wishlist_header" href="<?php echo $wishlist; ?>" class="header-user_link">
+                  <span class="header-user-text"><?php echo $text_promocode; ?></span>
+                </a>
+              </li>
+            </ul>
+            <ul class="header-user_items">
+              <li class="header-user_item">
+                <a id="wishlist_header" href="<?php echo $wishlist; ?>" class="header-user_link">
 				<span class="header-user-icon">
                   <span class="icon">
                     <svg>
@@ -108,11 +105,11 @@
                     </svg>
                   </span>
 				</span>
-                <span class="add-count add-count_favourite header-user-count" data-value="<?php echo $text_wishlist; ?>"></span>
-              </a>
-            </li>
-            <li class="header-user_item">
-              <a href="<?php echo $compare; ?>" class="header-user_link ajax_compare">
+                  <span class="add-count add-count_favourite header-user-count" data-value="<?php echo $text_wishlist; ?>"></span>
+                </a>
+              </li>
+              <li class="header-user_item">
+                <a href="<?php echo $compare; ?>" class="header-user_link ajax_compare">
 										<span class="header-user-icon">
 											<span class="icon">
 												<svg>
@@ -120,62 +117,55 @@
 												</svg>
 											</span>
 										</span>
-                <span class="add-count add-count_compare header-user-count" data-value="<?php echo $text_compare; ?>"></span>
-              </a>
-            </li>
-            <li class="header-user_item"><?php echo $cart; ?></li>
-          </ul>
-
+                  <span class="add-count add-count_compare header-user-count" data-value="<?php echo $text_compare; ?>"></span>
+                </a>
+              </li>
+              <li class="header-user_item"><?php echo $cart; ?></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- header bottom -->
-<div class="header-bottom">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-lg-3 col-md-4">
-        <a href="/" class="header-logo">
-          <picture>
-            <img src="<?php echo $logo; ?>" alt="ВЕЛОСКЛАД Интернет-магазин велосипедов">
-          </picture>
-        </a>
-      </div>
-
-      <div class="col-lg-4 col-md-5">
-        <div class="header-search-wrap">
-          <div class="header-popular">
-            Популярное:
-            <menu class="header-popular_list">
-              <li class="header-popular_item">
-                <a href="#" class="header-popular_link link">велосипед</a></li>
-              <li class="header-popular_item">
-                <a href="#" class="header-popular_link link">горные</a></li>
-              <li class="header-popular_item">
-                <a href="#" class="header-popular_link link">велозапчасти</a></li>
-              <li class="header-popular_item">
-                <a href="#" class="header-popular_link link">шлем</a></li>
-            </menu>
+  <!-- header bottom -->
+  <div class="header-bottom">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-4">
+              <a href="/" class="header-logo">
+                  <picture>
+                      <img src="catalog/view/theme/default/image/logo.svg" alt="ВЕЛОСКЛАД Интернет-магазин велосипедов">
+                  </picture>
+              </a>
           </div>
+        <?php //echo "<pre>"; var_dump($popular_queries); echo "</pre>";?>
+        <div class="col-lg-4 col-md-5">
+          <div class="header-search-wrap">
+            <div class="header-popular">
+              Популярное:
+              <menu class="header-popular_list">
+                <?php foreach ($popular_queries as $popular_query) { ?>
+                <li class="header-popular_item">
+                  <a href="/index.php?route=product/search&search=<?php echo $popular_query['name'];?>" class="header-popular_link link"><?php echo $popular_query['name'];?></a>
+                </li>
+                <?php } ?>
+              </menu>
+            </div>
             <?php echo $search; ?>
+          </div>
         </div>
-      </div>
-
-      <div class="col-lg-5 col-md-3">
-        <div class="header-phone">
-          <div class="phone-wrap">
-            <a href="tel:<?php echo $telephone2; ?>" class="phone-call"><?php echo $telephone; ?></a>
-            <span class="icon">
+        <div class="col-lg-5 col-md-3">
+          <div class="header-phone">
+            <div class="phone-wrap">
+              <a href="tel:<?php echo $telephone2; ?>" class="phone-call"><?php echo $telephone; ?></a>
+              <span class="icon">
               <svg>
                 <use xlink:href="#icon_sellphone"></use>
               </svg>
             </span>
-            <time class="phone-time"><?php echo $open; ?></time>
-          </div>
-
-          <a href="#" class="btn btn_cta header-cta visible-lg">
+              <time class="phone-time"><?php echo $open; ?></time>
+            </div>
+            <a href="#" class="btn btn_cta header-cta visible-lg">
 								<span class="btn-icon">
 									<span class="icon">
 										<svg>
@@ -183,37 +173,14 @@
 										</svg>
 									</span>
 								</span>
-            <span class="btn-text">Заказать звонок</span>
-          </a>
+              <span class="btn-text">Заказать звонок</span>
+            </a>
+          </div>
         </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-<!-- header menu -->
-
-
-<header>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <div id="logo">
-          <?php if ($logo) { ?>
-            <?php if ($home == $og_url) { ?>
-              <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" />
-            <?php } else { ?>
-              <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
-            <?php } ?>
-          <?php } else { ?>
-            <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
-          <?php } ?>
-        </div>
-      </div>
-      <div class="col-sm-5"><?php echo $search; ?>
       </div>
     </div>
   </div>
+  <!-- header menu -->
 </header>
 <?php if ($categories) { ?>
 <div class="container">

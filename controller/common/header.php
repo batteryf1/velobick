@@ -4,9 +4,18 @@ class ControllerCommonHeader extends Controller {
 		// Analytics
 		$this->load->model('extension/extension');
 
+        $this->load->model('catalog/attribute_group');
+
 		$data['analytics'] = array();
 
 		$analytics = $this->model_extension_extension->getExtensions('analytics');
+
+		//Atribute
+
+
+        $results = $this->model_catalog_attribute_group->getMyAttributeGroups();
+
+        //
 
 		foreach ($analytics as $analytic) {
 			if ($this->config->get($analytic['code'] . '_status')) {
@@ -49,6 +58,9 @@ class ControllerCommonHeader extends Controller {
 
 		$data['text_home'] = $this->language->get('text_home');
 
+        // Popular queries
+        $data['popular_queries'] = $results;
+
 		// Wishlist
 		if ($this->customer->isLogged()) {
 			$this->load->model('account/wishlist');
@@ -64,8 +76,6 @@ class ControllerCommonHeader extends Controller {
 		//Cart
 
         $data['cart_total'] = $this->cart->countProducts();
-
-        //
 
         //admin telephone
 

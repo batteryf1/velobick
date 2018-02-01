@@ -95,3 +95,8 @@
 .header-search-wrap .input-group{
     width: 100%;
 }
+
+.header-popular_item:after {
+    position: relative;
+    left: -3px;
+}
