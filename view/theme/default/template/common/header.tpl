@@ -138,7 +138,7 @@
                   </picture>
               </a>
           </div>
-        <?php echo "<pre>"; var_dump($popular_queries); echo "</pre>";?>
+        <?php //echo "<pre>"; var_dump($popular_queries); echo "</pre>";?>
         <div class="col-lg-4 col-md-5">
           <div class="header-search-wrap">
             <div class="header-popular">
