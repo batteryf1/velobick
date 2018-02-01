@@ -1,16 +1,10 @@
 <?php
 class ModelCatalogAttributeGroup extends Model {
 
-    public function getAttributeGroup($attribute_group_id) {
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "attribute_group WHERE attribute_group_id = '" . (int)$attribute_group_id . "'");
-
-        return $query->row;
-    }
-
     public function getMyAttributeGroups()
     {
         //$sql = "SELECT * FROM " . DB_PREFIX . "attribute_group " ;
-        $sql = "SELECT * FROM " . DB_PREFIX . "attribute_group ag LEFT JOIN " . DB_PREFIX . "attribute_group_description agd ON (ag.attribute_group_id = agd.attribute_group_id) WHERE agd.language_id = '" . (int)$this->config->get('config_language_id') . "' and ag.sort_order BETWEEN 100 and 150";
+        $sql = "SELECT agd.name, ag.sort_order FROM " . DB_PREFIX . "attribute_group ag LEFT JOIN " . DB_PREFIX . "attribute_group_description agd ON (ag.attribute_group_id = agd.attribute_group_id) WHERE agd.language_id = '" . (int)$this->config->get('config_language_id') . "' and ag.sort_order BETWEEN 100 and 150";
         $query = $this->db->query($sql);
         return $query->rows;
 
