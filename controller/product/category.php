@@ -67,6 +67,12 @@ class ControllerProductCategory extends Controller {
 
 			$category_id = (int)array_pop($parts);
 
+			//Write in session this category
+
+            $this->session->data['this_category'] = $category_id;
+
+            //
+
 			foreach ($parts as $path_id) {
 				if (!$path) {
 					$path = (int)$path_id;
@@ -440,4 +446,69 @@ class ControllerProductCategory extends Controller {
 			$this->response->setOutput($this->load->view('error/not_found', $data));
 		}
 	}
+
+    public function myajax_post() {
+
+        $this->load->model('catalog/product');
+
+        $this_сategory = $this->session->data['this_category'];
+
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $data = file_get_contents("php://input");
+
+            $arr = array();
+
+            //$arr = [
+            //  'name' => "$data",
+            //    'second_name' => 'Новая'
+            //];
+
+            $arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+
+            //$arr = [$data]['name'] = 'name1';
+            //$arr = [$data]['adress'] = 'name2';
+
+
+            //$result = json_decode($arr);
+            $json['success'] = $data;
+
+
+
+
+
+            //$this->response->addHeader('Content-Type: application/json');
+            //$this->response->setOutput(json_encode($json));
+        }
+
+
+        $this->load->language('product/category');
+
+        $this->load->model('catalog/category');
+
+        $this->load->model('catalog/product');
+
+        $this->load->model('tool/image');
+
+        $filter_data = array(
+            'filter_category_id' => $this_сategory,
+            'filter_filter'      => $data
+//            'sort'               => $sort,
+//            'order'              => $order,
+//            'start'              => ($page - 1) * $limit,
+//            'limit'              => $limit
+        );
+
+        $results = $this->model_catalog_product->getProducts($filter_data);
+
+        $json['success'] = $results;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($json));
+
+
+        //$json['success'] = 'Hello';
+        //$this->response->addHeader('Content-Type: application/json');
+        //$this->response->setOutput(json_encode($json));
+    }
 }
